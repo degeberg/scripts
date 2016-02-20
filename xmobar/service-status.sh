@@ -5,7 +5,8 @@ function disk_status {
            "/mnt/tc2"
            "/mnt/tc3"
            "/mnt/tc4"
-           "/mnt/tc5")
+           "/mnt/tc5"
+           "/media/storage")
     SOME=0
     ALL=1
     L="$1"
