@@ -9,14 +9,14 @@ volume=$(pacmd list-sinks | grep -A 15 '* index' | awk '/volume: front/{ print $
 case "$1" in
     "up")
         if [ $volume == "-inf" ]; then
-            pactl set-sink-volume $default_sink "0dB"
-            pactl set-sink-volume $default_sink -- "-60dB"
+            pactl set-sink-volume $default_sink 0dB
+            pactl set-sink-volume $default_sink \-60dB
         else
-            pactl set-sink-volume $default_sink -- "+$STEP"
+            pactl set-sink-volume $default_sink +$STEP
         fi
         ;;
     "down")
-        pactl set-sink-volume $default_sink -- "-$STEP"
+        pactl set-sink-volume $default_sink \-$STEP
         ;;
     "set-volume")
         pactl set-sink-volume $default_sink $2
