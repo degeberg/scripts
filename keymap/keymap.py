@@ -74,7 +74,7 @@ def set_map(m):
 
 def get_current_map_key():
     m = get_current_map()
-    if m['layout'] == 'us' and m['variant'] == 'dvorak-intl':
+    if m['layout'] == 'us' and 'variant' in m and m['variant'] == 'dvorak-intl':
         return 'dvorak' # ugly special case hack
     else:
         return m['layout']
